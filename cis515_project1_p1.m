@@ -51,19 +51,25 @@ while 1
         plot(b2(:,1),b2(:,2),'r.')
         plot(b3(:,1),b3(:,2),'bo')
 
-n = 100;
-interval = 1/n;
-T = 0:interval:1; % n evenly spaced intervals between 0 and 1
+        clear b10 b11 b12 b20 b21 b30
+        for t=0:.01:1
+            b10(:,1) = b0(:,1)*(1-t) + b1(:,1)*t;
+            b10(:,2) = b0(:,2)*(1-t) + b1(:,2)*t;
+            b11(:,1) = b1(:,1)*(1-t) + b2(:,1)*t;
+            b11(:,2) = b1(:,2)*(1-t) + b2(:,2)*t;
+            b12(:,1) = b2(:,1)*(1-t) + b3(:,1)*t;
+            b12(:,2) = b2(:,2)*(1-t) + b3(:,2)*t;
+            
+            b20(:,1) = b10(:,1)*(1-t) + b11(:,1)*t;
+            b20(:,2) = b10(:,2)*(1-t) + b11(:,2)*t;
+            b21(:,1) = b11(:,1)*(1-t) + b12(:,1)*t;
+            b21(:,2) = b11(:,2)*(1-t) + b12(:,2)*t;
+            
+            b30(:,1) = b20(:,1)*(1-t) + b21(:,1)*t;
+            b30(:,2) = b20(:,2)*(1-t) + b21(:,2)*t;
+            plot(b30(:,1),b30(:,2),'.g')
+        end
 
-% apply C function to all values in T
-
-for j = 1:n-1
-        new_column = b(B(1:end - j,j), B(2:end - j + 1, j), t);
-        B(:, j+1) = [new_column; zeros(j, 1)];
-    end
-    point_on_curve = B(1, n);
-
-plot(b0(:,1),b0(:,2),Bx, By)    
     end
 
 end
