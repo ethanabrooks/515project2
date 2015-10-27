@@ -8,6 +8,6 @@ function [coeffs] = haar_step(array, k)
         evens = array(:, 2:2:m);
         avs = (odds + evens)/2;
         diffs = (odds - evens)/2;
-        coeffs = [av_and_diff(avs, k-1), diffs];
+        coeffs = [haar_step(avs, k-1), diffs];
     end
     
