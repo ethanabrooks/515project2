@@ -40,3 +40,5 @@ c = haar_step(handel',3);
 sound(c);
 pause(8);
 sound(haar_inv_step(c,3));
+pause(8);
+c = haar(handel');
