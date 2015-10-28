@@ -1,6 +1,6 @@
 u = [0 2 4 6 6 4 2 1 -1 -2 -4 -6 -6 -4 -2 0];
 w = [u u u u u u u u];
-%{
+
 figure(8)
 plf(w)
 title('Original vector w')
@@ -25,7 +25,7 @@ title('Vector w after haar_step(k=6)')
 figure(7)
 plf(haar_step(w,7))
 title('Vector w after haar_step(k=7)')
-%}
+ 
 load handel
 handel = y(1:65536);
 sound(handel);
