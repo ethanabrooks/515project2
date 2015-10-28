@@ -20,5 +20,4 @@ A2 = [
     ];
 
 haar_norm_A = haar_norm(haar_degree(A))
-rounded = haar_norm_A * transpose(haar_norm_A)*A
-haar_inv2D_n(A2); % I think this is the matrix we're looking for (?)
+rounded = round(haar_norm_A' * A * haar_norm_A)
