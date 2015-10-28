@@ -19,4 +19,6 @@ A2 = [
     74 74 69 69 58 58 59 59
     ];
 
-haar2D_n(A2) % I think this is the matrix we're looking for (?)
+haar_norm_A = haar_norm(haar_degree(A))
+rounded = haar_norm_A * transpose(haar_norm_A)*A
+haar_inv2D_n(A2); % I think this is the matrix we're looking for (?)
