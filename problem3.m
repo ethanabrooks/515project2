@@ -24,3 +24,8 @@ title('Vector w after haar_step(k=6)')
 figure(7)
 plf(haar_step(w,7))
 title('Vector w after haar_step(k=7)')
+
+load handel
+Y = y(1:65536);
+yhaar = haar_step(Y',20);
+sound(haar_inv_step(yhaar,3));
