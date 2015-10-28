@@ -19,5 +19,5 @@ A2 = [
     74 74 69 69 58 58 59 59
     ];
 
-haar_norm_A = haar_norm(haar_degree(A))
+haar_norm_A = haar_norm(haar_degree(A));
 rounded = round(haar_norm_A' * A * haar_norm_A)
