@@ -1,4 +1,6 @@
-function [original] = haar_inv2D_n(haar_coeffs)
-%    n = ceil(log2(length(haar_coeffs))); 
-%    % matrix will have 2^n rows & columns
-%    original = haar_matrix(n) * haar_coeffs;
+function [coeffs] = haar_inv2D_n(array)
+    padded = pad_for_haar(array);
+    n = haar_degree(array);
+    norm_haar_matrix = haar_norm(n);
+    coeffs = norm_haar_matrix * padded;
+end
